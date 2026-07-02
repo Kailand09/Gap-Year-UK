@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Gap Year UK</title>
+<title>Gap Year UK | Volunteering</title>
 
 <style>
 
@@ -12,197 +12,756 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:Arial, Helvetica, sans-serif;
 scroll-behavior:smooth;
 }
 
 body{
 background:#f5f7fa;
 color:#222;
+line-height:1.6;
+overflow-x:hidden;
 }
 
+/* Navigation */
+
 nav{
-background:#005EB8;
-padding:20px;
-position:sticky;
+position:fixed;
 top:0;
+left:0;
+width:100%;
+background:#005EB8;
+padding:18px;
+display:flex;
+justify-content:center;
+gap:35px;
 z-index:1000;
-text-align:center;
+box-shadow:0 4px 15px rgba(0,0,0,.25);
 }
 
 nav a{
 color:white;
 text-decoration:none;
-margin:0 20px;
-font-weight:bold;
 font-size:18px;
+font-weight:bold;
+transition:.3s;
 }
 
+nav a:hover{
+color:#FFD700;
+}
+
+/* Hero */
+
 .hero{
+
 height:100vh;
+
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
+padding:20px;
+
 color:white;
 
 background:
+
 linear-gradient(
 rgba(0,0,0,.55),
 rgba(0,0,0,.55)
 ),
+
 url("https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg");
 
 background-size:cover;
 background-position:center;
-background-repeat:no-repeat;
+
+}
+
+.hero-content{
+
+max-width:900px;
+
 }
 
 .hero h1{
-font-size:4rem;
+
+font-size:70px;
 margin-bottom:20px;
+
 }
 
 .hero p{
-font-size:1.3rem;
-max-width:700px;
-margin:auto;
+
+font-size:24px;
+margin-bottom:35px;
+
 }
 
-.section{
+.button{
+
+display:inline-block;
+
+padding:18px 40px;
+
+background:white;
+
+color:#005EB8;
+
+font-weight:bold;
+
+text-decoration:none;
+
+border-radius:50px;
+
+transition:.3s;
+
+}
+
+.button:hover{
+
+background:#FFD700;
+color:black;
+
+}
+
+/* Allgemein */
+
+section{
+
 padding:100px 10%;
+
 }
 
 .section-title{
-font-size:3rem;
-margin-bottom:30px;
-color:#005EB8;
+
+font-size:48px;
+
 text-align:center;
+
+margin-bottom:20px;
+
+color:#005EB8;
+
 }
 
+.section-subtitle{
+
+text-align:center;
+
+font-size:20px;
+
+color:#666;
+
+margin-bottom:60px;
+
+}
+
+/* Karten */
+
 .cards{
+
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-margin-top:40px;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
 }
 
 .card{
+
 background:white;
-padding:30px;
+
+padding:35px;
+
 border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+box-shadow:0 8px 25px rgba(0,0,0,.1);
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
 }
 
 .card h3{
-color:#005EB8;
+
+font-size:28px;
+
 margin-bottom:15px;
+
+color:#005EB8;
+
 }
 
+.card p{
+
+font-size:18px;
+
+}
+
+/* Länderüberschrift */
+
+.country-header{
+
+text-align:center;
+
+margin-bottom:50px;
+
+}
+
+.country-header h2{
+
+font-size:55px;
+
+color:#005EB8;
+
+}
+
+.country-header small{
+
+display:block;
+
+margin-top:10px;
+
+font-size:18px;
+
+color:#777;
+
+}
+
+/* Tabellen */
+
 table{
+
 width:100%;
+
 border-collapse:collapse;
-margin-top:30px;
+
+margin-top:40px;
+
 background:white;
+
+border-radius:15px;
+
+overflow:hidden;
+
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+
 }
 
 td{
-padding:15px;
+
+padding:18px;
+
 border-bottom:1px solid #ddd;
+
+font-size:18px;
+
 }
 
+tr:last-child td{
+
+border-bottom:none;
+
+}
+
+/* Highlight */
+
 .highlight{
+
 background:#005EB8;
+
 color:white;
+
 text-align:center;
-padding:80px 20px;
+
+padding:90px 20px;
+
 }
 
 .highlight h2{
+
+font-size:48px;
+
 margin-bottom:20px;
-font-size:2.5rem;
+
 }
+
+/* Footer */
 
 footer{
+
 background:#111;
+
 color:white;
-text-align:center;
+
 padding:40px;
-}
 
-.country-header{
 text-align:center;
-margin-bottom:40px;
+
+font-size:18px;
+
 }
 
-.country-header p{
-max-width:800px;
-margin:auto;
-line-height:1.6;
+@media(max-width:900px){
+
+.hero h1{
+
+font-size:48px;
+
+}
+
+.hero p{
+
+font-size:20px;
+
+}
+
+nav{
+
+gap:18px;
+
+flex-wrap:wrap;
+
+}
+
+.section-title{
+
+font-size:36px;
+
+}
+
+.country-header h2{
+
+font-size:40px;
+
+}
+
 }
 
 </style>
+
 </head>
 
 <body>
 
 <nav>
+
 <a href="#home">Home</a>
+
+<a href="#countries">Countries</a>
+
 <a href="#scotland">Scotland</a>
+
 <a href="#england">England</a>
+
+<a href="#wales">Wales</a>
+
+<a href="#compare">Compare</a>
+
+<a href="#sources">Sources</a>
+
 </nav>
 
 <section class="hero" id="home">
 
-<div>
+<div class="hero-content">
 
-<h1>🌍 Gap Year Volunteering UK</h1>
+<h1>🇬🇧 Gap Year UK</h1>
 
 <p>
-Discover volunteering opportunities in Scotland and England.
-Gain experience, improve your English and explore the UK.
+
+Discover volunteering opportunities in Scotland, England and Wales.
+Improve your English, gain international experience and explore the United Kingdom.
+
 </p>
+
+<a href="#countries" class="button">
+
+Explore Now
+
+</a>
+
+</div>
+
+</section>
+<!-- ========================= -->
+<!-- CHOOSE YOUR DESTINATION -->
+<!-- ========================= -->
+
+<section id="countries">
+
+<h2 class="section-title">Choose Your Destination</h2>
+
+<p class="section-subtitle">
+Discover three unique countries of the United Kingdom and find the volunteering experience that suits you best.
+</p>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>🏴 Scotland</h3>
+
+<p>
+Experience breathtaking landscapes, famous castles, friendly communities and exciting conservation projects.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🏴 England</h3>
+
+<p>
+Explore vibrant cities, historic landmarks and a wide range of volunteering opportunities.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🏴 Wales</h3>
+
+<p>
+Discover spectacular national parks, dramatic coastlines and welcoming local communities.
+</p>
+
+</div>
 
 </div>
 
 </section>
 
+<!-- ========================= -->
 <!-- SCOTLAND -->
+<!-- ========================= -->
 
-<section class="section" id="scotland">
+<section id="scotland">
 
 <div class="country-header">
 
-<h2 class="section-title">🏴 Scotland</h2>
+<h2>🏴 Scotland</h2>
 
-<p>
-Gain international experience, improve your English and make
-a difference while exploring one of the most beautiful countries
-in Europe.
-</p>
+<small>Research by Kai</small>
 
 </div>
+
+<p class="section-subtitle">
+
+Gain international experience while exploring one of Europe's most beautiful countries. Scotland offers amazing nature, welcoming people and meaningful volunteering opportunities.
+
+</p>
 
 <div class="cards">
 
 <div class="card">
+
 <h3>🏔 Nature</h3>
-<p>Explore the Highlands, Isle of Skye and Scotland's national parks.</p>
+
+<p>
+
+Explore the Highlands, Loch Ness, the Isle of Skye and Scotland's breathtaking national parks.
+
+</p>
+
 </div>
 
 <div class="card">
+
 <h3>🏰 Culture</h3>
-<p>Historic castles, traditions and a rich Scottish heritage.</p>
+
+<p>
+
+Visit historic castles, discover Scottish traditions and experience the unique local culture.
+
+</p>
+
 </div>
 
 <div class="card">
+
 <h3>🤝 Community</h3>
-<p>Work with local organisations and support meaningful projects.</p>
-</div>
+
+<p>
+
+Support charities, environmental organisations and local communities while improving your English.
+
+</p>
 
 </div>
 
-<h2 style="margin-top:60px;">Estimated Costs</h2>
+</div>
+
+<h2 style="margin-top:70px;color:#005EB8;">
+
+Requirements
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>📄 Documents</h3>
+
+<p>
+
+• Valid passport
+
+<br><br>
+
+• Charity Worker Visa
+
+<br><br>
+
+• Sponsorship by a registered charity
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🗣 Language</h3>
+
+<p>
+
+Basic English skills are recommended to communicate with colleagues and local people.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>💷 Financial Proof</h3>
+
+<p>
+
+Applicants may need proof of financial maintenance unless the sponsoring charity confirms financial support.
+
+</p>
+
+</div>
+
+</div>
+
+<h2 style="margin-top:70px;color:#005EB8;">
+
+Estimated Costs
+
+</h2>
+
+<table>
+
+<tr>
+
+<td>Charity Worker Visa</td>
+
+<td>£379</td>
+
+</tr>
+
+<tr>
+
+<td>Immigration Health Surcharge</td>
+
+<td>£1,035</td>
+
+</tr>
+
+<tr>
+
+<td>Travel Insurance</td>
+
+<td>£200–£500</td>
+
+</tr>
+
+<tr>
+
+<td>Flights</td>
+
+<td>£100–£300</td>
+
+</tr>
+
+<tr>
+
+<td><strong>Total</strong></td>
+
+<td><strong>£1,714–£2,214</strong></td>
+
+</tr>
+
+</table>
+
+</section>
+<!-- ========================= -->
+<!-- ENGLAND -->
+<!-- ========================= -->
+
+<section id="england">
+
+<div class="country-header">
+
+<h2>🏴 England</h2>
+
+<small>Research by Anna</small>
+
+</div>
+
+<p class="section-subtitle">
+
+England offers countless volunteering opportunities in one of Europe's most diverse countries. From historic cities to beautiful countryside, volunteers can gain valuable experience while making a positive impact.
+
+</p>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>🏙 Famous Cities</h3>
+
+<p>
+
+Visit London, Manchester, Liverpool, Birmingham and many other exciting cities full of history, culture and modern attractions.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🏛 Heritage</h3>
+
+<p>
+
+Help preserve museums, historical buildings, castles and cultural heritage sites throughout England.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🌱 Volunteering</h3>
+
+<p>
+
+Support environmental projects, youth organisations, charities, animal shelters and community programmes.
+
+</p>
+
+</div>
+
+</div>
+
+<h2 style="margin-top:70px;color:#005EB8;">
+
+Why Choose England?
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>🎓 Education</h3>
+
+<p>
+
+Improve your English every day while gaining practical work experience that can strengthen your future career.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🌍 Diversity</h3>
+
+<p>
+
+Meet people from all over the world and experience one of Europe's most multicultural countries.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>💼 Career Benefits</h3>
+
+<p>
+
+Develop teamwork, communication and problem-solving skills that are valuable for university and future jobs.
+
+</p>
+
+</div>
+
+</div>
+
+<h2 style="margin-top:70px;color:#005EB8;">
+
+Typical Volunteer Projects
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>🌳 Nature</h3>
+
+<p>
+
+Tree planting, park maintenance, wildlife conservation and environmental education.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>👨‍👩‍👧 Community</h3>
+
+<p>
+
+Support food banks, youth clubs, local charities and community events.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🐶 Animal Care</h3>
+
+<p>
+
+Volunteer at animal shelters, rescue centres or wildlife organisations.
+
+</p>
+
+</div>
+
+</div>
+
+<h2 style="margin-top:70px;color:#005EB8;">
+
+Estimated Costs
+
+</h2>
 
 <table>
 
@@ -234,80 +793,354 @@ in Europe.
 </table>
 
 </section>
+<!-- ========================= -->
+<!-- WALES -->
+<!-- ========================= -->
 
-<!-- ENGLAND -->
-
-<section class="section" id="england" style="background:white;">
+<section id="wales">
 
 <div class="country-header">
 
-<h2 class="section-title">🏴 England</h2>
+<h2>🏴 Wales</h2>
+
+<small>Research by Finja</small>
+
+</div>
+
+<p class="section-subtitle">
+
+Wales is a fantastic destination for volunteers who love nature, wildlife and local communities. From mountains to the coastline, Wales offers unforgettable experiences and meaningful projects.
+
+</p>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>🏔 Eryri National Park</h3>
 
 <p>
-England combines world-famous cities, historic landmarks and
-a wide range of volunteering opportunities.
+
+Explore one of the UK's most beautiful national parks (formerly Snowdonia). Volunteers help protect nature, hiking trails and wildlife.
+
 </p>
 
 </div>
 
+<div class="card">
+
+<h3>🌊 Coastline</h3>
+
+<p>
+
+Support beach clean-ups, marine conservation and coastal protection projects around the Welsh coast.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🏰 Welsh Heritage</h3>
+
+<p>
+
+Visit famous castles like Caernarfon Castle and experience Wales' unique culture, language and traditions.
+
+</p>
+
+</div>
+
+</div>
+
+<h2 style="margin-top:70px;color:#005EB8;">
+
+Volunteer Opportunities
+
+</h2>
+
 <div class="cards">
 
 <div class="card">
-<h3>🏙 Cities</h3>
-<p>Discover London, Manchester, Liverpool and other cultural centres.</p>
+
+<h3>🌿 Keep Wales Tidy</h3>
+
+<p>
+
+Join environmental projects that improve parks, forests and public spaces while protecting local wildlife.
+
+</p>
+
 </div>
 
 <div class="card">
-<h3>🏛 Heritage</h3>
-<p>Support museums, historical sites and community projects.</p>
+
+<h3>🦭 Marine Life Rescue</h3>
+
+<p>
+
+Help protect seals, seabirds and marine ecosystems together with local conservation organisations.
+
+</p>
+
 </div>
 
 <div class="card">
-<h3>🌱 Projects</h3>
-<p>Environmental conservation, youth work and charity programmes.</p>
-</div>
+
+<h3>🤝 Community Projects</h3>
+
+<p>
+
+Support local charities, youth organisations and cultural events while improving your English skills.
+
+</p>
 
 </div>
 
-<h2 style="margin-top:60px;">Why England?</h2>
+</div>
+
+<h2 style="margin-top:70px;color:#005EB8;">
+
+Accommodation
+
+</h2>
 
 <div class="cards">
 
 <div class="card">
-<h3>🎓 Education</h3>
-<p>Improve language skills and gain valuable practical experience.</p>
+
+<h3>🏡 Housing</h3>
+
+<p>
+
+Depending on the organisation, accommodation may be provided. Other volunteers stay in hostels, shared houses or with host families.
+
+</p>
+
 </div>
 
 <div class="card">
-<h3>🌍 Diversity</h3>
-<p>Meet people from many cultures and backgrounds.</p>
+
+<h3>🍽 Daily Life</h3>
+
+<p>
+
+Many charities support volunteers with meals, local transport or helpful information during their stay.
+
+</p>
+
 </div>
 
 <div class="card">
-<h3>💼 Future Benefits</h3>
-<p>Strengthen your CV and develop important life skills.</p>
+
+<h3>💷 Estimated Costs</h3>
+
+<p>
+
+Visa: £379<br>
+Immigration Health Surcharge: £1,035<br>
+Flights: £100–£300<br>
+Insurance: £200–£500
+
+</p>
+
 </div>
 
 </div>
 
 </section>
 
+<!-- ========================= -->
+<!-- COUNTRY COMPARISON -->
+<!-- ========================= -->
+
+<section id="compare">
+
+<h2 class="section-title">
+
+🇬🇧 Compare the Countries
+
+</h2>
+
+<table>
+
+<tr>
+
+<td><strong>Category</strong></td>
+
+<td><strong>Scotland</strong></td>
+
+<td><strong>England</strong></td>
+
+<td><strong>Wales</strong></td>
+
+</tr>
+
+<tr>
+
+<td>Nature</td>
+
+<td>⭐⭐⭐⭐⭐</td>
+
+<td>⭐⭐⭐</td>
+
+<td>⭐⭐⭐⭐⭐</td>
+
+</tr>
+
+<tr>
+
+<td>Cities</td>
+
+<td>⭐⭐⭐</td>
+
+<td>⭐⭐⭐⭐⭐</td>
+
+<td>⭐⭐</td>
+
+</tr>
+
+<tr>
+
+<td>Culture</td>
+
+<td>⭐⭐⭐⭐⭐</td>
+
+<td>⭐⭐⭐⭐</td>
+
+<td>⭐⭐⭐⭐</td>
+
+</tr>
+
+<tr>
+
+<td>Outdoor Activities</td>
+
+<td>⭐⭐⭐⭐⭐</td>
+
+<td>⭐⭐⭐</td>
+
+<td>⭐⭐⭐⭐⭐</td>
+
+</tr>
+
+<tr>
+
+<td>Community Work</td>
+
+<td>⭐⭐⭐⭐</td>
+
+<td>⭐⭐⭐⭐</td>
+
+<td>⭐⭐⭐⭐⭐</td>
+
+</tr>
+
+<tr>
+
+<td>Estimated Costs</td>
+
+<td>£1,714–£2,214</td>
+
+<td>£1,714–£2,214</td>
+
+<td>£1,714–£2,214</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<!-- ========================= -->
+<!-- MOTIVATION -->
+<!-- ========================= -->
+
 <section class="highlight">
 
-<h2>Small Actions. Big Impact.</h2>
+<h2>
+
+Small Actions. Big Impact.
+
+</h2>
 
 <p>
-Volunteering helps you grow personally, gain valuable
-experience and contribute to meaningful projects.
+
+Volunteering abroad helps you improve your English, gain valuable experience, meet new people and contribute to meaningful projects throughout the United Kingdom.
+
 </p>
+
+</section>
+
+<!-- ========================= -->
+<!-- SOURCES -->
+<!-- ========================= -->
+
+<section id="sources">
+
+<h2 class="section-title">
+
+Sources
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Official Sources</h3>
+
+<p>
+
+• GOV.UK – Charity Worker Visa<br>
+• GOV.UK – Electronic Travel Authorisation (ETA)<br>
+• Volunteer Scotland<br>
+• Wales Council for Voluntary Action (WCVA)<br>
+• National Trust<br>
+• Keep Wales Tidy
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Project Information</h3>
+
+<p>
+
+Scotland – Research by Kai<br><br>
+
+England – Research by Anna<br><br>
+
+Wales – Research by Finja
+
+</p>
+
+</div>
+
+</div>
 
 </section>
 
 <footer>
 
-Gap Year UK | Abimesse Project
+<h3>🇬🇧 Gap Year UK</h3>
+
+<p>
+
+Created for the Abimesse Project 2025
+
+</p>
+
+<p style="margin-top:15px;">
+
+Research by Kai • Anna • Finja
+
+</p>
 
 </footer>
 
 </body>
+
 </html>
